@@ -69,6 +69,8 @@ def search_file_command(args):
     with open(args.file, 'r') as file:
         data = file.readline()
         vector = [float(item) for item in data.split(',')]
+        if len(vector) != 768:
+            raise Exception('Your vector does not have a dimension of 768. Please fix this and try again.')
     vdb = PineconeVDB('test')
     responses = vdb.query(vector, metadata, top_k=int(args.top_k))
     print(PREFIX, f'Number os results: {len(responses)}')
