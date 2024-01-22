@@ -46,10 +46,14 @@ To execute the project, you can use the following commands:
 - To save transcriptions on the cloud:
     ```
     python main.py save -f <file_paths>
+    example:
+    python main.py save -f yt_short.mp4
     ```
 - To search for a vector from a file:
     ```
     python main.py search -f <file_path> -m <metadata> -k <top_k> -o <output_file>
+    example:
+    python main.py search -f test.csv -m one two -k 2 -o output.json
     ```
 
 Replace `<file_paths>`, `<file_path>`, `<metadata>`, `<top_k>`, and `<output_file>` with your actual values.
