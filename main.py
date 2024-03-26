@@ -57,7 +57,7 @@ def save_command(args):
     ]
     vdb = PineconeVDB('test')
     vdb.save(vectors_input)
-    print(f"Completed!")
+    print("Completed!")
 
 
 def search_file_command(args):
