@@ -67,7 +67,7 @@ def search_file_command(args):
     if args.metadata:
         metadata = {"text": {"$in": args.metadata}}
     with open(args.file, 'r') as file:
-        data = file.readline()
+        data = file.readline(5_000_000)
         vector = [float(item) for item in data.split(',')]
         if len(vector) != 768:
             raise Exception('Your vector does not have a dimension of 768. Please fix this and try again.')
